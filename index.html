@@ -1,188 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NGO-Charity</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./output.css" />
-    <!-- <link rel="stylesheet" href="../tailwind.config.js" /> -->
 
-    <script>
-      tailwind.config = { darkMode: "class" };
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STACKLY</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./output.css" />
+  <!-- <link rel="stylesheet" href="../tailwind.config.js" /> -->
 
-    <!-- Font Awesom CDN-Link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
 
-    <!-- custom styles -->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
+<!-- swiper js -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-      body {
-        font-family: "Noto Serif Georgian", serif;
-        overflow-x: hidden;
+  <!-- Font Awesom CDN-Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- custom styles -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap");
+
+    body {
+      font-family: "Noto Serif Georgian", serif;
+      overflow-x: hidden;
+    }
+
+    .slide-right {
+      transform: translateX(-50%);
+      animation: slideRight 2s ease-out forwards;
+    }
+
+    .slide-up {
+      transform: translatey(40%);
+      animation: slideUp 2s ease-out forwards;
+    }
+
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
       }
-    </style>
-    <script>
-      // Apply saved theme
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    </script>
-  </head>
 
-  <body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
-    <!-- top head -->
-    <div
-      class="h-8 bg-blue-200 dark:bg-gray-700 flex justify-end md:justify-between items-center border-b border-white/20 w-full mx-auto sticky top-0 z-100"
-    >
-      <div class="md:flex items-center space-x-4 hidden">
-        <a href="#" class="text-[12px]">
-          <i class="fa-solid fa-location-dot"></i>Lorem ipsum dolor sit amet
-          consectetur
-        </a>
-        <a href="#" class="text-[12px]">
-          <i class="fa-solid fa-phone"></i>+91-1234567890
-        </a>
-      </div>
-      <div class="">
-        <ul class="flex justify-center items-center text-xl">
-          <li class="m-0 p-2 hover:text-pink-500">
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li class="p-2">
-            <a href=""><i class="fa-solid fa-envelope"></i></a>
-          </li>
-          <li class="p-2">
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-          </li>
-          <li class="p-2">
-            <a href=""><i class="fa-brands fa-youtube"></i></a>
-          </li>
-        </ul>
-      </div>
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(40%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+      height: max-content !important;
+      padding-bottom: 64px !important;
+      -webkit-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+      position: relative;
+    }
+
+    .swiper-pagination-bullet {
+      background: #4F46E5;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #4F46E5 !important;
+    }
+  </style>
+  <script>
+    // Apply saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+
+<body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-all duration-200 ease-out">
+  <!-- top head -->
+  <div
+    class="h-8 bg-blue-200 dark:bg-gray-950 flex justify-end md:justify-between items-center shadow dark:shadow-white/20 w-full mx-auto sticky top-0 z-100">
+    <div class="md:flex items-center space-x-4 hidden">
+      <a href="#" class="text-[12px]">
+        <i class="fa-solid fa-location-dot"></i>Lorem ipsum dolor sit amet
+        consectetur
+      </a>
+      <a href="#" class="text-[12px]">
+        <i class="fa-solid fa-phone"></i>+91-1234567890
+      </a>
     </div>
-    <!-- Navbar  -->
-    <nav
-      class="bg-white dark:bg-black shadow-md border-black dark:shadow-white/5 fixed w-full z-10"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16"
-      >
-        <!-- Logo -->
-        <div
-          class="flex items-center font-bold text-xl text-orange-600 dark:text-orange-400"
-        >
-          <img
-            class="h-10"
-            src="https://img.icons8.com/?size=100&id=HypOrOWMeLl9&format=png&color=000000"
-            alt="logo"
-          />
-          <h1>NGO</h1>
+    <div class="">
+      <ul class="flex justify-center items-center text-[14px]">
+        <li class="m-0 p-2 hover:text-pink-500">
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li class="p-2">
+          <a href=""><i class="fa-solid fa-envelope"></i></a>
+        </li>
+        <li class="p-2">
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li class="p-2">
+          <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Navbar  -->
+  <nav class="bg-white dark:bg-black shadow-md border-black dark:shadow-white/5 fixed w-full z-100">
+    <div class="mx-auto flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center font-bold text-xl text-orange-600 dark:text-orange-400">
+        <div class=" px-6 py-4">
+          <img class="h-28" src="https://i.postimg.cc/6p3NbWTf/image-removebg-preview.png" alt="logo" />
+          <!-- <h1 class="text-2xl font-bold uppercase text-white">Stackly</h1> -->
         </div>
+      </div>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6 items-center">
-          <!--Home Dropdown -->
-          <div class="relative m-0">
-            <button id="home-btn">
-              Home <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <div
-              id="home-menu"
-              class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow hidden"
-            >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Home1</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Home2</a
-              >
-              <a
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6 items-center">
+        <!--Home Dropdown -->
+        <div class="relative m-0">
+          <button id="home-btn">
+            <a href="#">Home</a> <i class="fa-solid fa-caret-down"></i>
+          </button>
+          <div id="home-menu" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow hidden">
+            <a href="#home1" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Home1</a>
+            <a href="#home2" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Home2</a>
+            <!-- <a
                 href="#"
                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
                 >Home3</a
-              >
-            </div>
+              > -->
           </div>
-
-          <a href="#">About US</a>
-
-          <!--Services Dropdown -->
-          <div class="relative">
-            <button id="services-btn">
-              Services <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <div
-              id="services-menu"
-              class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow hidden"
-            >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Service1</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Service2</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Service3</a
-              >
-            </div>
-          </div>
-
-          <!--Blogs Dropdown -->
-          <div class="relative">
-            <button id="blog-btn">
-              Blogs <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <div
-              id="blog-menu"
-              class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow hidden"
-            >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Blog1</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Blog2</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link"
-                >Blog3</a
-              >
-            </div>
-          </div>
-
-          <a href="#">Contact</a>
-
-          <!-- CTA-button  -->
-          <button class="bg-orange-600 text-white px-4 py-2 rounded">
-            Donate Now
-          </button>
-          <button id="dark-toggle" class="p-2 rounded">
-            <i class="fa-solid fa-moon"></i>
-          </button>
         </div>
+
+        <a href="#">About US</a>
+
+        <!--Services Dropdown -->
+        <div class="relative">
+          <button id="services-btn">
+            Services <i class="fa-solid fa-caret-down"></i>
+          </button>
+          <div id="services-menu" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow hidden">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Service1</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Service2</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Service3</a>
+          </div>
+        </div>
+
+        <!--Blogs Dropdown -->
+        <div class="relative">
+          <button id="blog-btn">
+            Blogs <i class="fa-solid fa-caret-down"></i>
+          </button>
+          <div id="blog-menu" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow hidden">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Blog1</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Blog2</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Blog3</a>
+          </div>
+        </div>
+
+        <a href="#">Contact</a>
+
+        <!-- CTA-button  -->
+        <button class="bg-orange-600 text-white px-4 py-2 rounded">
+          Donate Now
+        </button>
+        <button id="dark-toggle" class="p-2 rounded">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+
+      <div class="flex justify-center items-center gap-2 md:hidden">
+        <!-- dark toggle  -->
+        <button id="mobile-dark-toggle" class="md:hidden p-2 rounded w-full">
+          <i class="fa-solid fa-moon"></i>
+        </button>
 
         <!-- Mobile Hamburger -->
         <button id="menu-btn" class="md:hidden text-2xl">
@@ -190,201 +199,596 @@
         </button>
       </div>
 
-      <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden px-4 pb-4 space-y-2 transition-all duration-300 ease-linear overflow-hidden max-h-0 overflow-y-scroll"
-      >
-        <!-- Home  -->
-        <button
-          id="mobile-home-btn"
-          class="block w-full text-left cursor-pointer"
-        >
-          Home <i class="fa-solid fa-caret-down"></i>
-        </button>
-        <div id="mobile-home-menu" class="hidden pl-4 space-y-4">
-          <a href="#" class="block mobile-link">Home1</a>
-          <a href="#" class="block mobile-link">Home2</a>
-          <a href="#" class="block mobile-link">Home3</a>
-        </div>
-        <!-- About  -->
-        <a href="#" class="block mobile-link">About</a>
+    </div>
 
-        <!-- Services  -->
-        <button
-          id="mobile-services-btn"
-          class="block w-full text-left cursor-pointer"
-        >
-          Services <i class="fa-solid fa-caret-down"></i>
-        </button>
-        <div id="mobile-services-menu" class="hidden pl-4 space-y-4">
-          <a href="#" class="block mobile-link">Service1</a>
-          <a href="#" class="block mobile-link">Service1</a>
-          <a href="#" class="block mobile-link">Service1</a>
-        </div>
-
-        <!-- Blogs  -->
-        <button
-          id="mobile-blog-btn"
-          class="block w-full text-left cursor-pointer"
-        >
-          Blogs <i class="fa-solid fa-caret-down"></i>
-        </button>
-        <div id="mobile-blog-menu" class="hidden pl-4 space-y-4">
-          <a href="#" class="block mobile-link">Blog1</a>
-          <a href="#" class="block mobile-link">Blog2</a>
-          <a href="#" class="block mobile-link">Blog3</a>
-        </div>
-
-        <a href="#" class="block mobile-link">Contact</a>
-
-        <button class="bg-orange-600 text-white px-4 py-2 rounded w-full">
-          Donate Now
-        </button>
-
-        <button id="mobile-dark-toggle" class="p-2 rounded w-full">
-          <i class="fa-solid fa-moon"></i>
-        </button>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden pt-2 px-4 pb-4 space-y-4 transition-all duration-300 ease-linear overflow-hidden max-h-0 overflow-y-scroll">
+      <!-- Home  -->
+      <button id="mobile-home-btn" class="block w-full text-left cursor-pointer">
+        Home <i class="fa-solid fa-caret-down"></i>
+      </button>
+      <div id="mobile-home-menu" class="hidden pl-4 space-y-4">
+        <a href="#" class="block mobile-link">Home1</a>
+        <a href="#" class="block mobile-link">Home2</a>
+        <a href="#" class="block mobile-link">Home3</a>
       </div>
-    </nav>
+      <!-- About  -->
+      <a href="#" class="block mobile-link">About</a>
 
-    <!-- Home-Section  -->
+      <!-- Services  -->
+      <button id="mobile-services-btn" class="block w-full text-left cursor-pointer">
+        Services <i class="fa-solid fa-caret-down"></i>
+      </button>
+      <div id="mobile-services-menu" class="hidden pl-4 space-y-4">
+        <a href="#" class="block mobile-link">Service1</a>
+        <a href="#" class="block mobile-link">Service1</a>
+        <a href="#" class="block mobile-link">Service1</a>
+      </div>
 
-    <main class="bg-gray-100 dark:bg-white/10 z-100 flex ">
-      <div class="grid md:grid-cols-2 justify-center items-center pt-20 p-5 md:p-20">
-        <!-- <img
-        class="w-full opacity-50 blur-[2px] mt-10"
-        src="https://i.postimg.cc/Bv51j5HM/image.png"
-        alt="main-header-image"
-      /> -->
+      <!-- Blogs  -->
+      <button id="mobile-blog-btn" class="block w-full text-left cursor-pointer">
+        Blogs <i class="fa-solid fa-caret-down"></i>
+      </button>
+      <div id="mobile-blog-menu" class="hidden pl-4 space-y-4">
+        <a href="#" class="block mobile-link">Blog1</a>
+        <a href="#" class="block mobile-link">Blog2</a>
+        <a href="#" class="block mobile-link">Blog3</a>
+      </div>
 
-        <div class="text-black dark:text-white p-2 md:p-4 text-center md:text-left">
-          <h1 class="text-2xl md:text-6xl pb-4 font-bold">We Love All People</h1>
-          <h3 class="text-[15px] md:text-3xl pb-4">Check our latest missions</h3>
-          <p class="pb-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
-            repellat nemo, possimus adipisci accusamus quis voluptatum labore
-            iste illo. Fugiat sunt deleniti quidem! Suscipit est ex quod
-            recusandae, vero quia.
-          </p>
-          <button class="bg-white dark:bg-black border-2 rounded-xl
-          border-orange-500 text-orange-500 px-4 py-2">
+      <a href="#" class="block mobile-link">Contact</a>
+
+      <button class="bg-orange-600 text-white px-4 py-2 rounded w-full">
+        Donate Now
+      </button>
+    </div>
+  </nav>
+
+  <!-- Home-Section  -->
+
+  <main class="bg-black dark:bg-gray-950 z-100 flex h-[650px]">
+    <div>
+      <img class="absolute z-0 w-full h-[650px] object-cover object-center opacity-25"
+        src="https://i.postimg.cc/nzb57HtG/image.png" alt="">
+    </div>
+    <div class="flex flex-col mt-20 p-5 md:p-20 z-10 slide-up">
+      <div class="text-white dark:text-white p-2 md:p-4 ">
+        <h1 class="text-2xl md:text-6xl pb-4 font-bold ">
+          We <span class="text-orange-500 underline-offset-0">Love</span> All People
+        </h1>
+        <h3 class="text-[15px] md:text-3xl pb-4">
+          Check our latest missions
+        </h3>
+        <p class="pb-4">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
+          repellat nemo, possimus adipisci accusamus quis voluptatum labore
+          iste illo. Fugiat sunt deleniti quidem! Suscipit est ex quod
+          recusandae, vero quia.
+        </p>
+        <div class="flex  items-start gap-2">
+
+          <button
+            class="bg-transparent border-2 rounded-xl border-orange-500 dark:bg-orange-500 text-white dark:text-white px-4 py-2">
             Donate Now
           </button>
-        </div>
 
-        <div class="rounded-2xl p-2 md:p-4">
-          <img
-            class="w-full  mt-10"
-            src="https://i.postimg.cc/Bv51j5HM/image.png"
-            alt="main-header-image"
-          />
+          <a href="#"
+            class="text-white dark:bg-transparent border-2 border-orange-500 rounded-xl bg-orange-500 px-4 py-2">
+            Learn more
+          </a>
+
         </div>
       </div>
-    </main>
 
-    <script>
-      // Dark mode toggle with icon swap
-      function toggleDark() {
-        const isDark = document.documentElement.classList.toggle("dark");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
+      <!-- <div class="p-2 md:p-4">
+        <img class="w-full mt-10 rounded-4xl shadow-2xl" src="https://i.postimg.cc/Bv51j5HM/image.png"
+          alt="main-header-image" />
+      </div> -->
+    </div>
+  </main>
 
-        const iconClass = isDark ? "fa-sun" : "fa-moon";
-        const removeClass = isDark ? "fa-moon" : "fa-sun";
+  <!-- Sub-Home Section  -->
 
-        document
-          .querySelectorAll("#dark-toggle i, #mobile-dark-toggle i")
-          .forEach((icon) => {
-            icon.classList.remove(removeClass);
-            icon.classList.add(iconClass);
-          });
+  <section class="py-12 bg-gray-200 dark:bg-gray-950">
+    <div class="text-center pb-8 slide-up">
+      <h1 class=" text-3xl md:text-5xl font-bold ">Causes we are Serving</h1>
+    </div>
+
+    <!--Caurosel Card-->
+    <div class="w-full relative max-w-7xl mx-auto">
+
+      <div class="swiper centered-slide-carousel swiper-container relative ">
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="bg-indigo-50 dark:bg-white/10 rounded-2xl h-[400px] flex flex-col shadow-md">
+              <img class="object-cover rounded-t-2xl h-56 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
+                alt="logo"></img>
+              <div class="pl-2 pr-2 text-center space-y-4 pb-4">
+                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
+                <p class="text-center text-[14px]">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
+                  provident vel qui cum quaerat, amet iure ratione ipsa.
+                </p>
+              </div>
+              <div class="flex items-center justify-between px-6">
+                <div>
+                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+                    href="#">Donate</a>
+                </div>
+
+                <div class="flex space-x-4 items-center text-center p-2">
+                  <div>
+                    <p class="font-bold">$ 60,00</p>
+                    <p class="text-green-500">Goal</p>
+                  </div>
+                  <div>
+                    <p class="font-bold">$ 30,00</p>
+                    <p class="text-red-500">Raised</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-indigo-50 dark:bg-white/10 rounded-2xl h-[400px] flex flex-col shadow-md">
+              <img class="object-cover rounded-t-2xl h-56 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
+                alt="logo"></img>
+              <div class="pl-2 pr-2 text-center space-y-4 pb-4">
+                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
+                <p class="text-center text-[14px]">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
+                  provident vel qui cum quaerat, amet iure ratione ipsa.
+                </p>
+              </div>
+              <div class="flex items-center justify-between px-6">
+                <div>
+                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+                    href="#">Donate</a>
+                </div>
+
+                <div class="flex space-x-4 items-center text-center p-2">
+                  <div>
+                    <p class="font-bold">$ 60,00</p>
+                    <p class="text-green-500">Goal</p>
+                  </div>
+                  <div>
+                    <p class="font-bold">$ 30,00</p>
+                    <p class="text-red-500">Raised</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-indigo-50 dark:bg-white/10 rounded-2xl h-[400px] flex flex-col shadow-md">
+              <img class="object-cover rounded-t-2xl h-56 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
+                alt="logo"></img>
+              <div class="pl-2 pr-2 text-center space-y-4 pb-4">
+                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
+                <p class="text-center text-[14px]">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
+                  provident vel qui cum quaerat, amet iure ratione ipsa.
+                </p>
+              </div>
+              <div class="flex items-center justify-between px-6">
+                <div>
+                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+                    href="#">Donate</a>
+                </div>
+
+                <div class="flex space-x-4 items-center text-center p-2">
+                  <div>
+                    <p class="font-bold">$ 60,00</p>
+                    <p class="text-green-500">Goal</p>
+                  </div>
+                  <div>
+                    <p class="font-bold">$ 30,00</p>
+                    <p class="text-red-500">Raised</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-indigo-50 dark:bg-white/10 rounded-2xl h-[400px] flex flex-col shadow-md">
+              <img class="object-cover rounded-t-2xl h-56 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
+                alt="logo"></img>
+              <div class="pl-2 pr-2 text-center space-y-4 pb-4">
+                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
+                <p class="text-center text-[14px]">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
+                  provident vel qui cum quaerat, amet iure ratione ipsa.
+                </p>
+              </div>
+              <div class="flex items-center justify-between px-6">
+                <div>
+                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+                    href="#">Donate</a>
+                </div>
+
+                <div class="flex space-x-4 items-center text-center p-2">
+                  <div>
+                    <p class="font-bold">$ 60,00</p>
+                    <p class="text-green-500">Goal</p>
+                  </div>
+                  <div>
+                    <p class="font-bold">$ 30,00</p>
+                    <p class="text-red-500">Raised</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-indigo-50 dark:bg-white/10 rounded-2xl h-[400px] flex flex-col shadow-md">
+              <img class="object-cover rounded-t-2xl h-56 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
+                alt="logo"></img>
+              <div class="pl-2 pr-2 text-center space-y-4 pb-4">
+                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
+                <p class="text-center text-[14px]">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
+                  provident vel qui cum quaerat, amet iure ratione ipsa.
+                </p>
+              </div>
+              <div class="flex items-center justify-between px-6">
+                <div>
+                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+                    href="#">Donate</a>
+                </div>
+
+                <div class="flex space-x-4 items-center text-center p-2">
+                  <div>
+                    <p class="font-bold">$ 60,00</p>
+                    <p class="text-green-500">Goal</p>
+                  </div>
+                  <div>
+                    <p class="font-bold">$ 30,00</p>
+                    <p class="text-red-500">Raised</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+        <div class="swiper-pagination "></div>
+      </div>
+    </div>
+
+    <!-- <div
+      class="max-w-[90%] md:max-w-[80%] mx-auto w-full p-4 grid place-items-center  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+      <div
+        class="flex flex-col justify-center items-center bg-white dark:bg-white/5 backdrop-blur-2xl  shadow-md space-y-2 rounded-2xl max-w-md  transform hover:-translate-y-2 shadow-gray-300 transition-all duration-200 ease-in">
+
+        <img class="object-cover rounded-t-2xl" src="https://i.postimg.cc/63dSp3MR/image.png" alt="logo"></img>
+
+        <div class="pl-2 pr-2 text-center space-y-2">
+          <h1 class="font-semibold text-2xl">Sponsor the child</h1>
+          <p class="text-center text-[14px]">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
+            provident vel qui cum quaerat, amet iure ratione ipsa.
+          </p>
+        </div>
+
+        <div class="flex justify-between items-center w-full  p-2 pt-3 ">
+
+          <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+            href="#">Donate</a>
+
+
+        </div>
+      </div>
+
+
+
+
+    </div> -->
+  </section>
+
+  <!-- Who we are  -->
+
+  <section class="bg-gray-200 dark:bg-gray-950 py-8">
+
+    <div class="grid md:grid-cols-2 w-full place-items-center p-6 gap-6">
+      <div class="">
+        <img class="rounded-4xl" src="https://i.postimg.cc/63dSp3MR/image.png" alt="">
+      </div>
+      <div class="space-y-2">
+
+        <h1 class="md:4xl lg:text-6xl font-bold">Who Are We?</h1>
+
+        <h4 class="text-[18px]">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet pulvinar ante
+          tempor etiam lacus eros</h4>
+
+        <p class="pb-6 text-[15px]">
+          The legal definition of a charitable organization (and of charity) varies between countries and in some
+          instances regions of the country. The regulation, the tax treatment, and the way in which charity law affects
+          charitable organizations also vary.
+        </p>
+
+        <p class="pb-6 text-[15px]">
+          The legal definition of a charitable organization (and of charity) varies between countries and in some
+          instances regions of the country. The regulation, the tax treatment, and the way in which charity law affects
+          charitable organizations also vary.
+        </p>
+
+        <a class="px-6 py-2 dark:text-black bg-green-400 rounded-full hover:text-white hover:bg-green-600 transition-all duration-300 ease-linear"
+          href="#">Learn more</a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Banner section  -->
+
+  <section class="bg-gray-200 dark:bg-blue-200 dark:text-black ">
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center p-12 gap-4 mx-auto w-full">
+
+
+      <div class="flex items-center justify-between md:justify-center space-x-4">
+        <img src="https://img.icons8.com/?size=100&id=24761&format=png&color=000000" alt="">
+        <div class="flex flex-col justify-start w-full">
+          <h1 class="text-xl md:text-4xl font-bold">35+</h1>
+          <h1 class="text-[15px]">Active Cases</h1>
+        </div>
+      </div>
+      <div class="flex items-center justify-between md:justify-center space-x-4">
+        <img src="https://img.icons8.com/?size=100&id=TfpGQpJYLI6U&format=png&color=000000" alt="">
+        <div class="flex flex-col justify-start w-full">
+          <h1 class="text-xl md:text-4xl font-bold">12 M</h1>
+          <h1 class="text-[15px]">People Donate</h1>
+        </div>
+      </div>
+      <div class="flex items-center justify-between md:justify-center space-x-4">
+        <img src="https://img.icons8.com/?size=100&id=65b2uIuWNKJm&format=png&color=000000" alt="">
+        <div class="flex flex-col justify-start w-full">
+          <h1 class="text-xl md:text-4xl font-bold">1200</h1>
+          <h1 class="text-[15px]">People get help</h1>
+        </div>
+      </div>
+      <div class="flex items-center justify-between md:justify-center space-x-4">
+        <img src="https://img.icons8.com/?size=100&id=AhV8Rz3lEr4R&format=png&color=000000" alt="">
+        <div class="flex flex-col justify-start w-full">
+          <h1 class="text-xl md:text-4xl font-bold">2000</h1>
+          <h1 class="text-[15px]">Cases every Year</h1>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- We serve peoples  -->
+
+  <section class="bg-gray-200 dark:bg-gray-950 dark:text-black pt-6">
+
+    <div class="text-black dark:text-white text-center space-y-8">
+      <h1 class="text-5xl font-bold">We serve for peoples</h1>
+      <p class="text-[16px]">Sedac odio aliquet, fringilla odio eget, tincidunt nunc duis aliquet
+        pulvinar ante.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 py-9 px-6  mx-auto place-items-center w-full gap-4">
+
+      <div
+        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl">
+        <img class="bg-green-200 rounded-full py-4 px-4"
+          src="https://img.icons8.com/?size=100&id=Bf2UvtrwZszK&format=png&color=000000" alt="logo">
+        <h1 class="text-2xl font-bold">Pure Food & Water</h1>
+        <p class="text-[13px] text-center dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Impedit odio vitae,
+          mollitia dolor quidem ipsum, aut excepturi voluptates.</p>
+      </div>
+      <div
+        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl">
+        <img class="bg-green-200 rounded-full py-4 px-4"
+          src="https://img.icons8.com/?size=100&id=9731&format=png&color=000000" alt="logo">
+        <h1 class="text-2xl font-bold">Medicine</h1>
+        <p class="text-[13px] text-center dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Impedit odio vitae,
+          mollitia dolor quidem ipsum, aut excepturi voluptates.</p>
+      </div>
+      <div
+        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl">
+        <img class="bg-green-200 rounded-full py-4 px-4"
+          src="https://img.icons8.com/?size=100&id=9437&format=png&color=000000" alt="logo">
+        <h1 class="text-2xl font-bold">Medicine</h1>
+        <p class="text-[13px] text-center dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Impedit odio vitae,
+          mollitia dolor quidem ipsum, aut excepturi voluptates.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- they need help  -->
+  <section>
+    <div class="w-full">
+      <img class="w-full h-[500px] object- object-center" src="https://i.postimg.cc/Bv51j5HM/image.png" alt="image">
+    </div>
+  </section>
+
+  <!-- footer -->
+
+  <footer class="px-6 md:px-16 lg:px-24 xl:px-32 pt-8 w-full text-gray-500 dark:bg-gray-950">
+    <div class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500/30 pb-6">
+
+      <div class="md:max-w-96 flex flex-col items-start h-full">
+        <img class="h-20 object-cover" src="https://i.postimg.cc/6p3NbWTf/image-removebg-preview.png" alt="logo">
+        <p class="mt-2 text-sm">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+      </div>
+
+      <div class="flex-1 flex items-start md:justify-end gap-20">
+        <div>
+          <h2 class="font-semibold mb-5 text-gray-800">Company</h2>
+          <ul class="text-sm space-y-2">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-semibold mb-5 text-gray-800">Get in touch</h2>
+          <div class="text-sm space-y-2">
+            <p>+1-212-456-7890</p>
+            <p>contact@example.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="pt-4 text-center text-xs md:text-sm pb-5">
+      Copyright 2025 © <a href="https://prebuiltui.com">Stackly</a>. All Right Reserved.
+    </p>
+  </footer>
+
+  <!--Swiper js CODE-->
+  <script>
+    var swiper = new Swiper(".centered-slide-carousel", {
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      spaceBetween: 30,
+      slideToClickedSlide: true,
+      pagination: {
+        el: ".centered-slide-carousel .swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 4,
+          spaceBetween: 30
+        },
+        1028: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+        990: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        }
       }
+    });
+  </script>
+
+  <script>
+
+    // Dark mode toggle with icon swap
+    function toggleDark() {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+
+      const iconClass = isDark ? "fa-sun" : "fa-moon";
+      const removeClass = isDark ? "fa-moon" : "fa-sun";
+
       document
-        .getElementById("dark-toggle")
-        .addEventListener("click", toggleDark);
-      document
-        .getElementById("mobile-dark-toggle")
-        .addEventListener("click", toggleDark);
-
-      // Mobile menu toggle with animation + icon change
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      menuBtn.addEventListener("click", () => {
-        const isOpen = mobileMenu.classList.contains("max-h-96");
-        menuBtn.innerHTML = isOpen
-          ? '<i class="fa-solid fa-bars"></i>'
-          : '<i class="fa-solid fa-xmark"></i>';
-        mobileMenu.classList.toggle("hidden", false);
-        mobileMenu.classList.toggle("max-h-0", isOpen);
-        mobileMenu.classList.toggle("max-h-96", !isOpen);
-        if (isOpen) setTimeout(() => mobileMenu.classList.add("hidden"), 300);
-      });
-
-      // Mobile dropdown toggle
-
-      //home
-      const mobileHomeBtn = document.getElementById("mobile-home-btn");
-      const mobileHomeMenu = document.getElementById("mobile-home-menu");
-      mobileHomeBtn.addEventListener("click", () => {
-        mobileHomeMenu.classList.toggle("hidden");
-      });
-
-      //services
-      const mobileServicesBtn = document.getElementById("mobile-services-btn");
-      const mobileServicesMenu = document.getElementById(
-        "mobile-services-menu"
-      );
-      mobileServicesBtn.addEventListener("click", () => {
-        mobileServicesMenu.classList.toggle("hidden");
-      });
-      //blog
-      const mobileBlogBtn = document.getElementById("mobile-blog-btn");
-      const mobileBlogMenu = document.getElementById("mobile-blog-menu");
-      mobileBlogBtn.addEventListener("click", () => {
-        mobileBlogMenu.classList.toggle("hidden");
-      });
-
-      // Close mobile menu on any link click
-      document.querySelectorAll(".mobile-link").forEach((link) => {
-        link.addEventListener("click", closeMobileMenu);
-      });
-
-      function closeMobileMenu() {
-        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        mobileMenu.classList.add("max-h-0");
-        mobileMenu.classList.remove("max-h-96");
-        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
-      }
-
-      // Desktop dropdown toggle
-      //home
-      const homeBtn = document.getElementById("home-btn");
-      const homeMenu = document.getElementById("home-menu");
-      homeBtn.addEventListener("click", () => {
-        homeMenu.classList.toggle("hidden");
-      });
-      //services
-      const servicesBtn = document.getElementById("services-btn");
-      const servicesMenu = document.getElementById("services-menu");
-      servicesBtn.addEventListener("click", () => {
-        servicesMenu.classList.toggle("hidden");
-      });
-      //blog
-      const blogBtn = document.getElementById("blog-btn");
-      const blogMenu = document.getElementById("blog-menu");
-      blogBtn.addEventListener("click", () => {
-        blogMenu.classList.toggle("hidden");
-      });
-
-      // Auto-close dropdown on click inside
-      document.querySelectorAll(".dropdown-link").forEach((link) => {
-        link.addEventListener("click", () => {
-          servicesMenu.classList.add("hidden");
-          homeMenu.classList.add("hidden");
-          blogMenu.classList.add("hidden");
+        .querySelectorAll("#dark-toggle i, #mobile-dark-toggle i")
+        .forEach((icon) => {
+          icon.classList.remove(removeClass);
+          icon.classList.add(iconClass);
         });
+    }
+    document
+      .getElementById("dark-toggle")
+      .addEventListener("click", toggleDark);
+    document
+      .getElementById("mobile-dark-toggle")
+      .addEventListener("click", toggleDark);
+
+    // Mobile menu toggle with animation + icon change
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("max-h-96");
+      menuBtn.innerHTML = isOpen
+        ? '<i class="fa-solid fa-bars"></i>'
+        : '<i class="fa-solid fa-xmark"></i>';
+      mobileMenu.classList.toggle("hidden", false);
+      mobileMenu.classList.toggle("max-h-0", isOpen);
+      mobileMenu.classList.toggle("max-h-96", !isOpen);
+      if (isOpen) setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+    });
+
+    // Mobile dropdown toggle
+
+    //home
+    const mobileHomeBtn = document.getElementById("mobile-home-btn");
+    const mobileHomeMenu = document.getElementById("mobile-home-menu");
+    mobileHomeBtn.addEventListener("click", () => {
+      mobileHomeMenu.classList.toggle("hidden");
+    });
+
+    //services
+    const mobileServicesBtn = document.getElementById("mobile-services-btn");
+    const mobileServicesMenu = document.getElementById(
+      "mobile-services-menu"
+    );
+    mobileServicesBtn.addEventListener("click", () => {
+      mobileServicesMenu.classList.toggle("hidden");
+    });
+    //blog
+    const mobileBlogBtn = document.getElementById("mobile-blog-btn");
+    const mobileBlogMenu = document.getElementById("mobile-blog-menu");
+    mobileBlogBtn.addEventListener("click", () => {
+      mobileBlogMenu.classList.toggle("hidden");
+    });
+
+    // Close mobile menu on any link click
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    function closeMobileMenu() {
+      menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      mobileMenu.classList.add("max-h-0");
+      mobileMenu.classList.remove("max-h-96");
+      setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+    }
+
+    // Desktop dropdown toggle
+    //home
+    const homeBtn = document.getElementById("home-btn");
+    const homeMenu = document.getElementById("home-menu");
+    homeBtn.addEventListener("click", () => {
+      homeMenu.classList.toggle("hidden");
+    });
+    //services
+    const servicesBtn = document.getElementById("services-btn");
+    const servicesMenu = document.getElementById("services-menu");
+    servicesBtn.addEventListener("click", () => {
+      servicesMenu.classList.toggle("hidden");
+    });
+    //blog
+    const blogBtn = document.getElementById("blog-btn");
+    const blogMenu = document.getElementById("blog-menu");
+    blogBtn.addEventListener("click", () => {
+      blogMenu.classList.toggle("hidden");
+    });
+
+    // Auto-close dropdown on click inside
+    document.querySelectorAll(".dropdown-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        servicesMenu.classList.add("hidden");
+        homeMenu.classList.add("hidden");
+        blogMenu.classList.add("hidden");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

@@ -5,13 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STACKLY</title>
+
+  <!-- Tailwind CDN Lin  -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind post cli configuration link  -->
+
   <link rel="stylesheet" href="./output.css" />
   <!-- <link rel="stylesheet" href="../tailwind.config.js" /> -->
 
-  <script>
-    tailwind.config = { darkMode: "class" };
-  </script>
+  <!-- Aos Animation  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- swiper js -->
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
@@ -76,25 +80,21 @@
     }
 
     .swiper-pagination-bullet {
-      background: #4F46E5;
+      background: hwb(30 0% 0%);
     }
 
     .swiper-pagination-bullet-active {
-      background: #4F46E5 !important;
+      background: hwb(0 48% 52%) !important;
     }
   </style>
-  <script>
-    // Apply saved theme
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.classList.add("dark");
-    }
-  </script>
+
+
 </head>
 
 <body class="bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-all duration-200 ease-out">
   <!-- top head -->
   <div
-    class="h-8 bg-blue-200 dark:bg-gray-950 flex justify-end md:justify-between items-center shadow dark:shadow-white/20 w-full mx-auto sticky top-0 z-100">
+    class="h-8 bg-blue-200 dark:bg-gray-950 flex justify-end md:justify-between items-center shadow dark:shadow-white/20 w-full mx-auto sticky top-0 px-6 z-100">
     <div class="md:flex items-center space-x-4 hidden">
       <a href="#" class="text-[12px]">
         <i class="fa-solid fa-location-dot"></i>Lorem ipsum dolor sit amet
@@ -122,12 +122,12 @@
     </div>
   </div>
   <!-- Navbar  -->
-  <nav class="bg-white dark:bg-black shadow-md border-black dark:shadow-white/5 fixed w-full z-100">
+  <nav class="bg-white dark:bg-black shadow-md border-black dark:shadow-white/5 fixed w-full z-1000 px-6">
     <div class="mx-auto flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex items-center font-bold text-xl text-orange-600 dark:text-orange-400">
         <div class=" px-6 py-4">
-          <img class="h-28" src="https://i.postimg.cc/6p3NbWTf/image-removebg-preview.png" alt="logo" />
+          <a href="./index.html"><img class="h-28" src="https://i.postimg.cc/6p3NbWTf/image-removebg-preview.png" alt="logo" /></a>
           <!-- <h1 class="text-2xl font-bold uppercase text-white">Stackly</h1> -->
         </div>
       </div>
@@ -137,10 +137,10 @@
         <!--Home Dropdown -->
         <div class="relative m-0">
           <button id="home-btn">
-            <a href="#">Home</a> <i class="fa-solid fa-caret-down"></i>
+            <a href="./index.html">Home</a> <i class="fa-solid fa-caret-down"></i>
           </button>
           <div id="home-menu" class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow hidden">
-            <a href="#home1" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Home1</a>
+            <a href="./Home/Home1.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Home1</a>
             <a href="#home2" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 dropdown-link">Home2</a>
             <!-- <a
                 href="#"
@@ -249,7 +249,7 @@
   <main class="bg-black dark:bg-gray-950 z-100 flex h-[650px]">
     <div>
       <img class="absolute z-0 w-full h-[650px] object-cover object-center opacity-25"
-        src="https://i.postimg.cc/nzb57HtG/image.png" alt="">
+        src="https://i.postimg.cc/nzb57HtG/image.png" alt="home">
     </div>
     <div class="flex flex-col mt-20 p-5 md:p-20 z-10 slide-up">
       <div class="text-white dark:text-white p-2 md:p-4 ">
@@ -290,7 +290,7 @@
   <!-- Sub-Home Section  -->
 
   <section class="py-12 bg-gray-200 dark:bg-gray-950">
-    <div class="text-center pb-8 slide-up">
+    <div class="text-center pb-8 " data-aos="fade-up">
       <h1 class=" text-3xl md:text-5xl font-bold ">Causes we are Serving</h1>
     </div>
 
@@ -301,192 +301,185 @@
 
         <div class="swiper-wrapper">
 
+
           <div class="swiper-slide p-2">
-            <div class="bg-gray-50 dark:bg-white/10 rounded-2xl h-[450px] flex flex-col shadow-md">
-              <img class="object-cover rounded-t-2xl h-72 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
-                alt="logo"></img>
-              <div class="pl-2 pr-2 text-center space-y-2 pb-2 pt-2">
-                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
-                <p class="text-center text-[14px]">
+            <div class="bg-black/90  text-white rounded-2xl h-[400px] flex flex-col justify-center shadow-md relative">
+              <img class="object-cover rounded-2xl h-full w-full opacity-45"
+                src="https://i.postimg.cc/63dSp3MR/image.png" alt="logo"></img>
+
+              <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
+                <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
+                <p class="text-center text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
-              </div>
-              <div class="flex items-center justify-between px-6">
-                <div>
-                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+
+                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+
+                  <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
+
+
+                  <div class="flex space-x-4 items-center text-center p-2 pb-4">
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 60,00</p>
+                      <p class="text-green-500">Goal</p>
+                    </div>
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 30,00</p>
+                      <p class="text-red-500">Raised</p>
+                    </div>
+                  </div>
+
                 </div>
 
-                <div class="flex space-x-4 items-center text-center p-2">
-                  <div>
-                    <p class="font-bold">$ 60,00</p>
-                    <p class="text-green-500">Goal</p>
-                  </div>
-                  <div>
-                    <p class="font-bold">$ 30,00</p>
-                    <p class="text-red-500">Raised</p>
-                  </div>
-                </div>
               </div>
             </div>
 
           </div>
           <div class="swiper-slide p-2">
-            <div class="bg-gray-50 dark:bg-white/10 rounded-2xl h-[450px] flex flex-col shadow-md">
-              <img class="object-cover rounded-t-2xl h-72 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
-                alt="logo"></img>
-              <div class="pl-2 pr-2 text-center space-y-2 pb-2 pt-2">
-                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
-                <p class="text-center text-[14px]">
+            <div class="bg-black/90  text-white rounded-2xl h-[400px] flex flex-col justify-center shadow-md relative">
+              <img class="object-cover rounded-2xl h-full w-full opacity-45"
+                src="https://i.postimg.cc/63dSp3MR/image.png" alt="logo"></img>
+
+              <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
+                <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
+                <p class="text-center text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
-              </div>
-              <div class="flex items-center justify-between px-6">
-                <div>
-                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+
+                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+
+                  <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
+
+
+                  <div class="flex space-x-4 items-center text-center p-2 pb-4">
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 60,00</p>
+                      <p class="text-green-500">Goal</p>
+                    </div>
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 30,00</p>
+                      <p class="text-red-500">Raised</p>
+                    </div>
+                  </div>
+
                 </div>
 
-                <div class="flex space-x-4 items-center text-center p-2">
-                  <div>
-                    <p class="font-bold">$ 60,00</p>
-                    <p class="text-green-500">Goal</p>
-                  </div>
-                  <div>
-                    <p class="font-bold">$ 30,00</p>
-                    <p class="text-red-500">Raised</p>
-                  </div>
-                </div>
               </div>
             </div>
 
           </div>
           <div class="swiper-slide p-2">
-            <div class="bg-gray-50 dark:bg-white/10 rounded-2xl h-[450px] flex flex-col shadow-md">
-              <img class="object-cover rounded-t-2xl h-72 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
-                alt="logo"></img>
-              <div class="pl-2 pr-2 text-center space-y-2 pb-2 pt-2">
-                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
-                <p class="text-center text-[14px]">
+            <div class="bg-black/90  text-white rounded-2xl h-[400px] flex flex-col justify-center shadow-md relative">
+              <img class="object-cover rounded-2xl h-full w-full opacity-45"
+                src="https://i.postimg.cc/63dSp3MR/image.png" alt="logo"></img>
+
+              <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
+                <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
+                <p class="text-center text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
-              </div>
-              <div class="flex items-center justify-between px-6">
-                <div>
-                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+
+                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+
+                  <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
+
+
+                  <div class="flex space-x-4 items-center text-center p-2 pb-4">
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 60,00</p>
+                      <p class="text-green-500">Goal</p>
+                    </div>
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 30,00</p>
+                      <p class="text-red-500">Raised</p>
+                    </div>
+                  </div>
+
                 </div>
 
-                <div class="flex space-x-4 items-center text-center p-2">
-                  <div>
-                    <p class="font-bold">$ 60,00</p>
-                    <p class="text-green-500">Goal</p>
-                  </div>
-                  <div>
-                    <p class="font-bold">$ 30,00</p>
-                    <p class="text-red-500">Raised</p>
-                  </div>
-                </div>
               </div>
             </div>
 
           </div>
           <div class="swiper-slide p-2">
-            <div class="bg-gray-50 dark:bg-white/10 rounded-2xl h-[450px] flex flex-col shadow-md">
-              <img class="object-cover rounded-t-2xl h-72 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
-                alt="logo"></img>
-              <div class="pl-2 pr-2 text-center space-y-2 pb-2 pt-2">
-                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
-                <p class="text-center text-[14px]">
+            <div class="bg-black/90  text-white rounded-2xl h-[400px] flex flex-col justify-center shadow-md relative">
+              <img class="object-cover rounded-2xl h-full w-full opacity-45"
+                src="https://i.postimg.cc/63dSp3MR/image.png" alt="logo"></img>
+
+              <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
+                <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
+                <p class="text-center text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
-              </div>
-              <div class="flex items-center justify-between px-6">
-                <div>
-                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+
+                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+
+                  <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
+
+
+                  <div class="flex space-x-4 items-center text-center p-2 pb-4">
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 60,00</p>
+                      <p class="text-green-500">Goal</p>
+                    </div>
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 30,00</p>
+                      <p class="text-red-500">Raised</p>
+                    </div>
+                  </div>
+
                 </div>
 
-                <div class="flex space-x-4 items-center text-center p-2">
-                  <div>
-                    <p class="font-bold">$ 60,00</p>
-                    <p class="text-green-500">Goal</p>
-                  </div>
-                  <div>
-                    <p class="font-bold">$ 30,00</p>
-                    <p class="text-red-500">Raised</p>
-                  </div>
-                </div>
               </div>
             </div>
 
           </div>
           <div class="swiper-slide p-2">
-            <div class="bg-gray-50 dark:bg-white/10 rounded-2xl h-[450px] flex flex-col shadow-md">
-              <img class="object-cover rounded-t-2xl h-72 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
-                alt="logo"></img>
-              <div class="pl-2 pr-2 text-center space-y-2 pb-2 pt-2">
-                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
-                <p class="text-center text-[14px]">
+            <div class="bg-black/90  text-white rounded-2xl h-[400px] flex flex-col justify-center shadow-md relative">
+              <img class="object-cover rounded-2xl h-full w-full opacity-45"
+                src="https://i.postimg.cc/63dSp3MR/image.png" alt="logo"></img>
+
+              <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
+                <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
+                <p class="text-center text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
-              </div>
-              <div class="flex items-center justify-between px-6">
-                <div>
-                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
+
+                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+
+                  <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
+
+
+                  <div class="flex space-x-4 items-center text-center p-2 pb-4">
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 60,00</p>
+                      <p class="text-green-500">Goal</p>
+                    </div>
+                    <div>
+                      <p class="font-bold md:text-2xl">$ 30,00</p>
+                      <p class="text-red-500">Raised</p>
+                    </div>
+                  </div>
+
                 </div>
 
-                <div class="flex space-x-4 items-center text-center p-2">
-                  <div>
-                    <p class="font-bold">$ 60,00</p>
-                    <p class="text-green-500">Goal</p>
-                  </div>
-                  <div>
-                    <p class="font-bold">$ 30,00</p>
-                    <p class="text-red-500">Raised</p>
-                  </div>
-                </div>
               </div>
             </div>
 
           </div>
-          <div class="swiper-slide p-2">
-            <div class="bg-gray-50 dark:bg-white/10 rounded-2xl h-[450px] flex flex-col shadow-md">
-              <img class="object-cover rounded-t-2xl h-72 w-full" src="https://i.postimg.cc/63dSp3MR/image.png"
-                alt="logo"></img>
-              <div class="pl-2 pr-2 text-center space-y-2 pb-2 pt-2">
-                <h1 class="font-semibold text-2xl">Sponsor the child</h1>
-                <p class="text-center text-[14px]">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
-                  provident vel qui cum quaerat, amet iure ratione ipsa.
-                </p>
-              </div>
-              <div class="flex items-center justify-between px-6">
-                <div>
-                  <a class="px-4 py-2 bg-green-200 dark:bg-green-900 rounded-4xl hover:bg-green-600 dark:hover:bg-green-600 transition-all duration-300 ease-linear"
-                    href="#">Donate</a>
-                </div>
+          
 
-                <div class="flex space-x-4 items-center text-center p-2">
-                  <div>
-                    <p class="font-bold">$ 60,00</p>
-                    <p class="text-green-500">Goal</p>
-                  </div>
-                  <div>
-                    <p class="font-bold">$ 30,00</p>
-                    <p class="text-red-500">Raised</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-          </div>
 
 
 
@@ -528,7 +521,7 @@
 
   <!-- Who we are  -->
 
-  <section class="bg-gray-200 dark:bg-gray-950 py-6">
+  <section class="bg-gray-200 dark:bg-gray-950 text-black dark:text-gray-400 py-6">
 
     <div class="grid md:grid-cols-2 w-full place-items-center p-6 gap-6">
       <div class="">
@@ -536,7 +529,7 @@
       </div>
       <div class="space-y-2">
 
-        <h1 class="md:4xl lg:text-6xl font-bold">Who Are We?</h1>
+        <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold dark:text-white">Who Are We?</h1>
 
         <h4 class="text-[18px]">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet pulvinar ante
           tempor etiam lacus eros</h4>
@@ -553,7 +546,7 @@
           charitable organizations also vary.
         </p>
 
-        <a class="px-6 py-2 dark:text-black bg-green-400 rounded-full hover:text-white hover:bg-green-600 transition-all duration-300 ease-linear"
+        <a class="px-6 py-3 dark:text-black bg-orange-400 rounded-full hover:text-white hover:bg-orange-600 transition-all duration-300 ease-linear"
           href="#">Learn more</a>
 
       </div>
@@ -563,57 +556,63 @@
 
   <!-- Banner section  -->
 
-  <section class="bg-gray-200 dark:bg-blue-200 dark:text-black ">
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center p-12 gap-4 mx-auto w-full">
+  <section class="bg-gray-200 dark:bg-gray-950 dark:text-gray-400 mx-auto">
+
+    <div class="text-2xl sm:text-3lx md:text-6xl font-bold text-black dark:text-white text-center">
+      <h1>Current Year Status</h1>
+    </div>
+
+     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center p-12 mx-auto gap-4 w-full">
 
 
-      <div class="flex items-center justify-between md:justify-center space-x-4">
-        <img src="https://img.icons8.com/?size=100&id=24761&format=png&color=000000" alt="">
+      <div class="flex items-center justify-center px-0 gap-8">
+        <img class="p-4 rounded-xl object-contain bg-white/5 w-full h-full" src="https://img.icons8.com/?size=100&id=24761&format=png&color=000000" alt="">
         <div class="flex flex-col justify-start w-full">
-          <h1 class="text-xl md:text-4xl font-bold">35+</h1>
+          <h1 class="text-xl md:text-4xl font-bold dark:text-white">35+</h1>
           <h1 class="text-[15px]">Active Cases</h1>
         </div>
       </div>
-      <div class="flex items-center justify-between md:justify-center space-x-4">
-        <img src="https://img.icons8.com/?size=100&id=TfpGQpJYLI6U&format=png&color=000000" alt="">
+      <div class="flex items-center justify-center gap-8">
+        <img class="p-4 rounded-xl object-contain bg-white/5 w-full h-full" src="https://img.icons8.com/?size=100&id=TfpGQpJYLI6U&format=png&color=000000" alt="">
         <div class="flex flex-col justify-start w-full">
-          <h1 class="text-xl md:text-4xl font-bold">12 M</h1>
+          <h1 class="text-xl md:text-4xl font-bold dark:text-white">12 M</h1>
           <h1 class="text-[15px]">People Donate</h1>
         </div>
       </div>
-      <div class="flex items-center justify-between md:justify-center space-x-4">
-        <img src="https://img.icons8.com/?size=100&id=65b2uIuWNKJm&format=png&color=000000" alt="">
+      <div class="flex items-center justify-center gap-8">
+        <img class="p-4 rounded-xl object-contain bg-white/5 w-full h-full" src="https://img.icons8.com/?size=100&id=65b2uIuWNKJm&format=png&color=000000" alt="">
         <div class="flex flex-col justify-start w-full">
-          <h1 class="text-xl md:text-4xl font-bold">1200</h1>
+          <h1 class="text-xl md:text-4xl font-bold dark:text-white">1200</h1>
           <h1 class="text-[15px]">People get help</h1>
         </div>
       </div>
-      <div class="flex items-center justify-between md:justify-center space-x-4">
-        <img src="https://img.icons8.com/?size=100&id=AhV8Rz3lEr4R&format=png&color=000000" alt="">
+      <div class="flex items-center justify-center gap-8">
+        <img class="p-4 rounded-xl object-contain bg-white/5 w-full h-full" src="https://img.icons8.com/?size=100&id=AhV8Rz3lEr4R&format=png&color=000000" alt="">
         <div class="flex flex-col justify-start w-full">
-          <h1 class="text-xl md:text-4xl font-bold">2000</h1>
+          <h1 class="text-xl md:text-4xl font-bold dark:text-white">2000</h1>
           <h1 class="text-[15px]">Cases every Year</h1>
         </div>
       </div>
 
     </div>
+   
 
   </section>
 
   <!-- We serve peoples  -->
 
-  <section class="bg-gray-200 dark:bg-gray-950 dark:text-black pt-6">
+  <section class="bg-gray-200 text-black dark:bg-gray-950 dark:text-black pt-6">
 
-    <div class="text-black dark:text-white text-center space-y-8">
-      <h1 class="text-5xl font-bold">We serve for peoples</h1>
-      <p class="text-[16px]">Sedac odio aliquet, fringilla odio eget, tincidunt nunc duis aliquet
+    <div class="text-black dark:text-white text-center space-y-8 p-2">
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold">We serve for peoples</h1>
+      <p class="text-[12px] md:text-[16px]">Sedac odio aliquet, fringilla odio eget, tincidunt nunc duis aliquet
         pulvinar ante.</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 py-9 px-6  mx-auto place-items-center w-full gap-4">
 
       <div
-        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl">
+        class="space-y-4 text-black bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl" data-aos="fade-up">
         <img class="bg-green-200 rounded-full py-4 px-4"
           src="https://img.icons8.com/?size=100&id=Bf2UvtrwZszK&format=png&color=000000" alt="logo">
         <h1 class="text-2xl font-bold">Pure Food & Water</h1>
@@ -622,7 +621,7 @@
           mollitia dolor quidem ipsum, aut excepturi voluptates.</p>
       </div>
       <div
-        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl">
+        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl" data-aos="fade-up">
         <img class="bg-green-200 rounded-full py-4 px-4"
           src="https://img.icons8.com/?size=100&id=9731&format=png&color=000000" alt="logo">
         <h1 class="text-2xl font-bold">Medicine</h1>
@@ -631,7 +630,7 @@
           mollitia dolor quidem ipsum, aut excepturi voluptates.</p>
       </div>
       <div
-        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl">
+        class=" space-y-4 bg-gray-50 dark:bg-white/5 dark:text-white  max-w-md p-6 flex flex-col justify-center items-center rounded-4xl shadow-2xl" data-aos="fade-up">
         <img class="bg-green-200 rounded-full py-4 px-4"
           src="https://img.icons8.com/?size=100&id=9437&format=png&color=000000" alt="logo">
         <h1 class="text-2xl font-bold">Medicine</h1>
@@ -650,7 +649,7 @@
       <img src="https://i.postimg.cc/NFL4gqRm/image.png" alt="newsletter" class=" w-full max-w-lg rounded-xl">
       <div class="relative flex items-center justify-center">
 
-        <div class="max-md:py-8 px-6 md:px-10 text-center space-y-8">
+        <div class="max-md:py-8 px-6 md:px-10 text-center space-y-4">
           <h1 class="text-2xl md:text-5xl font-bold">
             Connect with us
           </h1>
@@ -658,7 +657,7 @@
             The legal definition of a charitable organization (and of charity) varies between countries and in some
             instances regions of the country. The regulation, the tax treatment, and the way.
           </p>
-          <form class="mt-8 md:flex  gap-2">
+          <form class="mt-8 md:flex space-y-4 md:space-y-0">
             <input type="email" placeholder="Your email address"
               class="w-full outline-none rounded-md border border-gray-300 p-4 text-gray-900">
             <button type="submit" class="rounded-md bg-blue-600 px-7 py-2 text-white">
@@ -666,8 +665,8 @@
             </button>
           </form>
 
-          <div class="flex justify-center items-center">
-            <h1 class="text-[15px] ">Follow on  -</h1>
+          <div class="md:flex md:space-y-0 space-y-3 justify-center items-center">
+            <h1 class="text-[15px] ">Follow on</h1>
             <ul class="flex justify-center items-center text-xl">
               <li class="m-0 p-2 hover:text-pink-500 transform hover:scale-125 transition-all duration-300 ease-in">
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -690,7 +689,7 @@
 
   <!-- footer -->
 
-  <footer class="px-6 md:px-4 lg:px-8 xl:px-16 pt-8 w-full text-gray-500 bg-gray-200 dark:bg-gray-950">
+  <footer class="px-6 md:px-4 lg:px-8 xl:px-16 pt-2 w-full text-gray-500 bg-gray-200 dark:bg-gray-950">
     <div class="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500/30 pb-6">
 
       <div class="md:max-w-96 flex flex-col items-start h-full">
@@ -725,6 +724,29 @@
       Copyright 2025 © <a href="https://prebuiltui.com">Stackly</a>. All Right Reserved.
     </p>
   </footer>
+
+  <!-- Aos Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+     // initialization of aos
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+  </script>
+
+  <!-- Dark Toggle  -->
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+
+  <!-- Apply saved theme -->
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
 
   <!--Swiper js CODE-->
   <script>

@@ -10,7 +10,7 @@
 
     <!-- Tailwind post cli configuration link  -->
 
-    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="../output.css" />
     <!-- <link rel="stylesheet" href="../tailwind.config.js" /> -->
 
     <!-- Aos Animation  -->
@@ -47,6 +47,10 @@
         overflow-x: hidden;
       }
 
+      .bg-gradient-orange {
+        background-image: linear-gradient(90deg, #f97316 0%, hwb(30 0% 0%) 100%);
+      }
+
       .slide-right {
         transform: translateX(-50%);
         animation: slideRight 2s ease-out forwards;
@@ -79,23 +83,6 @@
           transform: translateY(0);
           opacity: 1;
         }
-      }
-
-      .swiper-wrapper {
-        width: 100%;
-        height: max-content !important;
-        padding-bottom: 64px !important;
-        -webkit-transition-timing-function: linear !important;
-        transition-timing-function: linear !important;
-        position: relative;
-      }
-
-      .swiper-pagination-bullet {
-        background: hwb(30 0% 0%);
-      }
-
-      .swiper-pagination-bullet-active {
-        background: hwb(0 48% 52%) !important;
       }
     </style>
   </head>
@@ -324,6 +311,115 @@
       </div>
     </nav>
 
+    <!-- Home-Section  -->
+    <main class="bg-black dark:bg-gray-950 z-100 flex h-[650px]">
+      <div>
+        <img
+          class="absolute z-0 w-full h-[650px] object-cover object-center opacity-25"
+          src="https://i.postimg.cc/nzb57HtG/image.png"
+          alt="home"
+        />
+      </div>
+      <div
+        class="flex flex-col justify-center items-center mt-20 p-5 md:p-20 z-10"
+      >
+        <div
+          class="text-white dark:text-white p-2 md:p-4 flex flex-col justify-center items-center slide-up"
+        >
+          <h1 class="text-2xl md:text-6xl pb-4 font-bold">
+            We <span class="text-orange-500 underline-offset-0">Love</span> All
+            People
+          </h1>
+          <h3 class="text-[15px] md:text-3xl pb-4">
+            Check our latest missions
+          </h3>
+          <p class="pb-4 text-center">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
+            repellat nemo, possimus adipisci accusamus quis voluptatum labore
+            iste illo. Fugiat sunt deleniti quidem! Suscipit est ex quod
+            recusandae, vero quia.
+          </p>
+          <div class="flex items-start gap-2">
+            <button
+              class="bg-transparent border-2 rounded-xl border-orange-500 dark:bg-orange-500 text-white dark:text-white px-4 py-2"
+            >
+              Donate Now
+            </button>
+
+            <a
+              href="#"
+              class="text-white dark:bg-transparent border-2 border-orange-500 rounded-xl bg-orange-500 px-4 py-2"
+            >
+              Learn more
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="p-2 md:p-4">
+        <img class="w-full mt-10 rounded-4xl shadow-2xl" src="https://i.postimg.cc/Bv51j5HM/image.png"
+          alt="main-header-image" />
+      </div> -->
+      </div>
+    </main>
+
+    <!-- Sub-home Section  -->
+
+    <section class="pt-10 pb-10 m-4">
+      <div
+        class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-4"
+      >
+        <div
+          class="bg-gradient-orange p-8 rounded-4xl shadow-2xl flex flex-col justify-center items-center text-center"
+        >
+          <img
+            src="https://img.icons8.com/?size=100&id=Utu32Z-yKkor&format=png&color=000000"
+            alt="education"
+          />
+          <h1>Education for All</h1>
+          <p>
+            Providing learning opportunities, school supplies, and scholarships
+            for underprivileged children.
+          </p>
+        </div>
+
+        <div class="flex flex-col justify-center items-center text-center">
+          <img
+            src="https://img.icons8.com/?size=100&id=35583&format=png&color=000000"
+            alt="health"
+          />
+          <h1>Healthcare Access</h1>
+          <p>
+            Organizing medical camps, providing essential medicines, and
+            spreading health awareness.
+          </p>
+        </div>
+
+        <div class="flex flex-col justify-center items-center text-center">
+          <img
+            src="https://img.icons8.com/?size=100&id=3tqDsjT8aqDN&format=png&color=000000"
+            alt="hungry"
+          />
+          <h1>Hunger Relief</h1>
+          <p>
+            Distributing nutritious meals and fighting food insecurity in
+            vulnerable communities.
+          </p>
+        </div>
+
+        <div class="flex flex-col justify-center items-center text-center">
+          <img
+            src="https://img.icons8.com/?size=100&id=dzBg8TxE5xYl&format=png&color=000000"
+            alt="empowerment"
+          />
+          <h1>Women Empowerment</h1>
+          <p>
+            Creating vocational training and skill development programs for
+            women’s independence.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Aos Animation -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
@@ -352,6 +448,7 @@
       }
     </script>
 
+    <!-- Navbar  -->
     <script>
       // Dark mode toggle with icon swap
       function toggleDark() {

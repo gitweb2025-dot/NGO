@@ -245,47 +245,96 @@
   </nav>
 
   <!-- Home-Section  -->
+    <main class="pt-20 bg-gray-200 text-black dark:text-white dark:bg-gray-950">
+      <div>
+        <div class="relative p-4">
+          <div
+            class="swiper vertical-slide-carousel swiper-container relative h-[600px]"
+          >
 
-  <main class="bg-black dark:bg-gray-950 z-100 flex h-[650px]">
-    <div>
-      <img class="absolute z-0 w-full h-[650px] object-cover object-center opacity-25"
-        src="https://i.postimg.cc/nzb57HtG/image.png" alt="home">
-    </div>
-    <div class="flex flex-col mt-20 p-5 md:p-20 z-10 slide-up">
-      <div class="text-white dark:text-white p-2 md:p-4 ">
-        <h1 class="text-2xl md:text-6xl pb-4 font-bold ">
-          We <span class="text-orange-500 underline-offset-0">Love</span> All People
-        </h1>
-        <h3 class="text-[15px] md:text-3xl pb-4">
-          Check our latest missions
-        </h3>
-        <p class="pb-4">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
-          repellat nemo, possimus adipisci accusamus quis voluptatum labore
-          iste illo. Fugiat sunt deleniti quidem! Suscipit est ex quod
-          recusandae, vero quia.
-        </p>
-        <div class="flex  items-start gap-2">
+          <!-- cards -->
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="bg-indigo-50 dark:bg-gray-950 rounded-2xl h-[600px] flex justify-center items-center"
+                >
+                  <span class="w-full">
+                    <img
+                      class="w-full h-[600px] object-cover object-center rounded-2xl opacity-25"
+                      src="https://i.postimg.cc/63dSp3MR/image.png"
+                      alt=""
+                    />
+                  </span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="bg-indigo-50 dark:bg-gray-950 rounded-2xl h-[600px] flex justify-center items-center"
+                >
+                  <span class="w-full">
+                    <img
+                      class="w-full h-[600px] object-cover object-center rounded-2xl opacity-25"
+                      src="https://i.postimg.cc/nzb57HtG/image.png"
+                      alt=""
+                    />
+                  </span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="bg-indigo-50 dark:bg-gray-950 rounded-2xl h-[600px] flex justify-center items-center"
+                >
+                  <span class="w-full">
+                    <img
+                      class="w-full h-[600px] object-cover object-center rounded-2xl opacity-25"
+                      src="https://i.postimg.cc/bNxVVT6H/image.png"
+                      alt=""
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="swiper-pagination !right-10 !left-full !top-1/3 !translate-y-8"
+            ></div>
 
-          <button
-            class="bg-transparent border-2 rounded-xl border-orange-500 dark:bg-orange-500 text-white dark:text-white px-4 py-2">
-            Donate Now
-          </button>
+            <!-- Content -->
 
-          <a href="#"
-            class="text-white dark:bg-transparent border-2 border-orange-500 rounded-xl bg-orange-500 px-4 py-2">
-            Learn more
-          </a>
+            <div
+              class="text-black dark:text-white absolute top-1/4 md:left-10 z-10 p-4 space-y-4"
+            data-aos="fade-up">
+              <h1 class="text-2xl md:text-5xl text-left font-bold">
+                Together, We Can Make a Difference
+              </h1>
+              <h3 class="dark:text-gray-400">
+                Every small act of kindness can create ripples of hope. Join us
+                in our mission to uplift communities, support education, and
+                bring smiles to those who need it most.
+              </h3>
 
+              <p class="dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quam sint nostrum repellendus accusamus in rem quia, animi, cum totam veritatis temporibus aperiam nam.
+              </p>
+
+              <div class="flex items-start gap-2">
+                <button
+                  class="bg-transparent border-2 rounded-xl border-orange-500 dark:bg-orange-500 text-black dark:text-white px-4 py-2"
+                >
+                  Donate Now
+                </button>
+
+                <a
+                  href="#"
+                  class="text-white dark:bg-transparent border-2 border-orange-500 rounded-xl bg-orange-500 px-4 py-2"
+                >
+                  Get Involved
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- <div class="p-2 md:p-4">
-        <img class="w-full mt-10 rounded-4xl shadow-2xl" src="https://i.postimg.cc/Bv51j5HM/image.png"
-          alt="main-header-image" />
-      </div> -->
-    </div>
-  </main>
+    </main>
 
   <!-- Sub-Home Section  -->
 
@@ -295,13 +344,12 @@
     </div>
 
     <!--Caurosel Card-->
-    <div class="w-full relative  mx-auto ">
+    <div class="max-w-[90%] relative  mx-auto ">
 
       <div class="swiper centered-slide-carousel swiper-container relative ">
 
         <div class="swiper-wrapper">
 
-
           <div class="swiper-slide p-2">
             <div class="bg-black/90  text-white rounded-2xl h-[400px] flex flex-col justify-center shadow-md relative">
               <img class="object-cover rounded-2xl h-full w-full opacity-45"
@@ -309,12 +357,12 @@
 
               <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
                 <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
-                <p class="text-center text-[14px] p-4">
+                <p class="text-center text-[12px] md:text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
 
-                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+                <div class="flex  py-4 items-center justify-between px-[10px] md:px-16">
 
                   <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
@@ -344,12 +392,12 @@
 
               <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
                 <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
-                <p class="text-center text-[14px] p-4">
+                <p class="text-center text-[12px] md:text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
 
-                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+                <div class="flex  py-4 items-center justify-between px-[10px] md:px-16">
 
                   <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
@@ -379,12 +427,12 @@
 
               <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
                 <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
-                <p class="text-center text-[14px] p-4">
+                <p class="text-center text-[12px] md:text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
 
-                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+                <div class="flex  py-4 items-center justify-between px-[10px] md:px-16">
 
                   <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
@@ -414,12 +462,12 @@
 
               <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
                 <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
-                <p class="text-center text-[14px] p-4">
+                <p class="text-center text-[12px] md:text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
 
-                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+                <div class="flex  py-4 items-center justify-between px-[10px] md:px-16">
 
                   <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
@@ -449,12 +497,12 @@
 
               <div class="text-center space-y-2 pb-2 pt-2 absolute top-1/3  mx-auto">
                 <h1 class="font-bold text-2xl md:text-3xl lg:text-6xl pb-3">Sponsor the child</h1>
-                <p class="text-center text-[14px] p-4">
+                <p class="text-center text-[12px] md:text-[14px] p-4">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam,
                   provident vel qui cum quaerat, amet iure ratione ipsa.
                 </p>
 
-                <div class="flex  py-4 items-center justify-between px-8 md:px-16">
+                <div class="flex  py-4 items-center justify-between px-[10px] md:px-16">
 
                   <a class="px-6 py-2 bg-orange-500 dark:bg-orange-900 rounded-4xl hover:bg-orange-600 dark:hover:bg-orange-600 transition-all duration-300 ease-linear"
                     href="#">Donate</a>
@@ -477,11 +525,6 @@
             </div>
 
           </div>
-          
-
-
-
-
 
         </div>
         <div class="swiper-pagination "></div>
@@ -604,7 +647,7 @@
   <section class="bg-gray-200 text-black dark:bg-gray-950 dark:text-black pt-6">
 
     <div class="text-black dark:text-white text-center space-y-8 p-2">
-      <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold">We serve for peoples</h1>
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold ">We <span class="text-orange-500">serve </span>for peoples</h1>
       <p class="text-[12px] md:text-[16px]">Sedac odio aliquet, fringilla odio eget, tincidunt nunc duis aliquet
         pulvinar ante.</p>
     </div>
@@ -644,12 +687,12 @@
   </section>
 
   <!-- connect with us  -->
-  <section class="bg-gray-200 dark:bg-gray-950 dark:text-white pt-6">
-    <div class="grid md:grid-cols-2 place-items-center mx-4 md:mx-auto p-6">
-      <img src="https://i.postimg.cc/NFL4gqRm/image.png" alt="newsletter" class=" w-full max-w-lg rounded-xl">
+  <section class="bg-gray-200 shadow-gray-500 dark:bg-gray-950 dark:text-white pt-6">
+    <div class="grid md:grid-cols-2 place-items-center mx-4 md:mx-auto p-6 ">
+      <img class="rounded-2xl" src="https://i.postimg.cc/NFL4gqRm/image.png" alt="newsletter" class=" w-full max-w-lg rounded-xl">
       <div class="relative flex items-center justify-center">
 
-        <div class="max-md:py-8 px-6 md:px-10 text-center space-y-4">
+        <div class="max-md:py-8 px-6 md:px-10 text-center space-y-4 p-10">
           <h1 class="text-2xl md:text-5xl font-bold">
             Connect with us
           </h1>
@@ -782,6 +825,23 @@
     });
   </script>
 
+    <!-- Swiper animation  -->
+    <script>
+      var swiper = new Swiper(".vertical-slide-carousel", {
+        loop: true,
+        direction: "vertical",
+        mousewheelControl: true,
+        mousewheel: {
+          releaseOnEdges: true,
+        },
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+          el: ".vertical-slide-carousel .swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
   <script>
 
     // Dark mode toggle with icon swap
